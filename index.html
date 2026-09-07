@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XXX Laboratory | 逢甲大學電子工程學系</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            color: #222;
+            line-height: 1.7;
+            background: #f7f8fa;
+        }
+
+        header {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+        }
+
+        .logo h2 {
+            color: #174f86;
+        }
+
+        .logo p {
+            font-size: 13px;
+            color: #777;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #174f86;
+        }
+
+        .hero {
+            min-height: 520px;
+            background:
+                linear-gradient(rgba(10, 45, 80, 0.82),
+                                rgba(10, 45, 80, 0.82)),
+                linear-gradient(135deg, #184b7b, #3277a8);
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 80px 10%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-weight: normal;
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            color: #e7eef5;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: white;
+            color: #174f86;
+            text-decoration: none;
+            border-radius: 5px;
+            width: fit-content;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 70px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #174f86;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about p {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .research {
+            background: #f4f6f8;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #174f86;
+            margin-bottom: 15px;
+        }
+
+        .professor {
+            background: white;
+        }
+
+        .professor-box {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .photo {
+            width: 220px;
+            height: 260px;
+            background: #ddd;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #777;
+            flex-shrink: 0;
+        }
+
+        .professor-info h3 {
+            color: #174f86;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .members {
+            background: #f4f6f8;
+        }
+
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .member {
+            background: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .member-photo {
+            height: 170px;
+            background: #ddd;
+            margin-bottom: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #777;
+        }
+
+        .news {
+            background: white;
+        }
+
+        .news-item {
+            max-width: 850px;
+            margin: auto;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .news-date {
+            color: #174f86;
+            margin-right: 25px;
+            font-weight: bold;
+        }
+
+        .contact {
+            background: #173d63;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        footer {
+            background: #102b45;
+            color: #ccc;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        @media(max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .member-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .professor-box {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <h2>XXX Laboratory</h2>
+        <p>Department of Electronic Engineering · Feng Chia University</p>
+    </div>
+
+    <nav>
+        <a href="#about">實驗室介紹</a>
+        <a href="#research">研究方向</a>
+        <a href="#professor">指導教授</a>
+        <a href="#members">成員</a>
+        <a href="#news">最新消息</a>
+        <a href="#contact">聯絡我們</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>XXX Laboratory</h1>
+
+    <h2>
+        逢甲大學 電子工程學系
+    </h2>
+
+    <p>
+        本實驗室致力於先進電子元件、半導體技術與相關領域之研究，
+        結合理論分析、電腦模擬及實驗技術，
+        培養學生具備半導體元件研究與工程實務能力。
+    </p>
+
+    <a href="#research" class="button">
+        Explore Our Research
+    </a>
+
+</section>
+
+
+<section id="about" class="about">
+
+    <h2>關於我們</h2>
+
+    <p>
+        XXX實驗室隸屬於逢甲大學電子工程學系。
+        本實驗室主要研究領域包含半導體元件、
+        先進電晶體技術、元件模擬與新興電子元件。
+        我們希望透過理論、模擬與實驗，
+        探索下一世代半導體元件之發展。
+    </p>
+
+</section>
+
+
+<section id="research" class="research">
+
+    <h2>研究方向 Research</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Advanced Semiconductor Devices</h3>
+            <p>
+                先進半導體元件、MOSFET、
+                FinFET、GAA與下一世代電晶體研究。
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>TCAD Simulation</h3>
+            <p>
+                使用半導體元件模擬工具分析
+                電場、能帶、載子傳輸與元件電性。
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Emerging Devices</h3>
+            <p>
+                探討新材料、新結構與
+                下一世代電子元件技術。
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="professor" class="professor">
+
+    <h2>指導教授</h2>
+
+    <div class="professor-box">
+
+        <div class="photo">
+            教授照片
+        </div>
+
+        <div class="professor-info">
+
+            <h3>教授姓名 Professor Name</h3>
+
+            <p>
+                逢甲大學 電子工程學系
+            </p>
+
+            <p>
+                <strong>研究領域：</strong>
+                半導體元件、元件模擬、先進電晶體
+            </p>
+
+            <p>
+                <strong>Email：</strong>
+                professor@fcu.edu.tw
+            </p>
+
+            <p>
+                <strong>辦公室：</strong>
+                Engineering Building XXX
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="members" class="members">
+
+    <h2>實驗室成員 Members</h2>
+
+    <div class="member-grid">
+
+        <div class="member">
+            <div class="member-photo">照片</div>
+            <h3>研究生 A</h3>
+            <p>Master Student</p>
+            <p>研究方向</p>
+        </div>
+
+        <div class="member">
+            <div class="member-photo">照片</div>
+            <h3>研究生 B</h3>
+            <p>Master Student</p>
+            <p>研究方向</p>
+        </div>
+
+        <div class="member">
+            <div class="member-photo">照片</div>
+            <h3>研究生 C</h3>
+            <p>Master Student</p>
+            <p>研究方向</p>
+        </div>
+
+        <div class="member">
+            <div class="member-photo">照片</div>
+            <h3>研究生 D</h3>
+            <p>Master Student</p>
+            <p>研究方向</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="news" class="news">
+
+    <h2>最新消息 News</h2>
+
+    <div class="news-item">
+        <span class="news-date">2026.09</span>
+        實驗室網站建置中。
+    </div>
+
+    <div class="news-item">
+        <span class="news-date">2026.08</span>
+        Welcome new laboratory members.
+    </div>
+
+    <div class="news-item">
+        <span class="news-date">2026.07</span>
+        Laboratory research update.
+    </div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+    <h2>聯絡我們 Contact</h2>
+
+    <p>
+        逢甲大學 電子工程學系
+    </p>
+
+    <p>
+        Feng Chia University
+    </p>
+
+    <p>
+        Email：example@fcu.edu.tw
+    </p>
+
+</section>
+
+
+<footer>
+
+    © 2026 XXX Laboratory · Department of Electronic Engineering · Feng Chia University
+
+</footer>
+
+
+</body>
+</html>
