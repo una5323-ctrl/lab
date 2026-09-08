@@ -146,33 +146,23 @@
         }
 
         .professor-box {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
+        
             display: flex;
-            align-items: center;
-            gap: 40px;
+            align-items: flex-start;
+            gap: 50px;
         }
-
+        
         .photo {
-            width: 220px;
-            height: 260px;
-            background: #ddd;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: #777;
-            flex-shrink: 0;
+            width: 300px;
+            flex: 0 0 300px;
         }
-
-
-        .photo {
-            width: 260px;
-            height: 340px;
-            flex: 0 0 260px;
-            overflow: hidden;
-            border-radius: 6px;
+        
+        .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         .professor-info h3 {
